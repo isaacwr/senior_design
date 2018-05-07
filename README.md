@@ -19,35 +19,60 @@ The GitStore Module, which interacts with git to save changes and fetch old vers
 How do they work, how do they work together?
 --------------------------------------------
 We altered the following Jupyter notebook module components to interact with our GitStore module via HTTP POST requests.
-Menubar.js, for creating the the Create/Restore Snapshot UI, populating the list of snapshots, and restoring from an old snapshot.
-SaveWidget.js, for creating new snapshots and saving and renaming a notebook.
-NotebookList.js, for deleting existing notebooks.
-Notebook.js, for creating new notebooks.
+
+- Menubar.js, for creating the the Create/Restore Snapshot UI, populating the list of snapshots, and restoring from an old snapshot.
+
+- SaveWidget.js, for creating new snapshots and saving and renaming a notebook.
+
+- NotebookList.js, for deleting existing notebooks.
+
+- Notebook.js, for creating new notebooks.
 
 Are there particular system requirements?
 -----------------------------------------
-    Python 3  (needed for the git store server) - https://www.python.org/downloads/ 
+
+Python 3  (needed for the git store server) - https://www.python.org/downloads/ 
+    
 Git 1.7 or higher - https://git-scm.com/ 
+
 Pip - https://pip.pypa.io/en/stable/installing/ 
+
 GitPython  - http://gitpython.readthedocs.io/en/stable/intro.html 
+
 How to download, build, and run the system
-    Ensure that all system requirements are met before continuing. 
-    Fork our Jupyter notebook source from:
-        https://github.com/kallen07/notebook 
-    Follow the instructions written CONTRIBUTING.rst (https://github.com/kallen07/notebook/blob/master/CONTRIBUTING.rst) to install components needed.
-    Go to a folder that does not contain an existing git repo, and start jupyter:
+------------------------------------------
+
+Ensure that all system requirements are met before continuing. 
+
+Fork our Jupyter notebook source from: https://github.com/kallen07/notebook 
+        
+Follow the instructions written CONTRIBUTING.rst (https://github.com/kallen07/notebook/blob/master/CONTRIBUTING.rst) to install components needed.
+    
+Go to a folder that does not contain an existing git repo, and start jupyter:
+    
         jupyter notebook
-    From the source code directory, start the git store server:
+        
+From the source code directory, start the git store server:
+    
         python3 tools/git_store_server.py 8000 [path_to_jupyter_notebook]
-    Note: jupyter currently expects the git store server to be running on port 8000, despite the port being customizable for git_store_server.
+        
+ Note: jupyter currently expects the git store server to be running on port 8000, despite the port being customizable for git_store_server.
 
 Future work: things that need to be done, things that others could contribute in the future
 --------------------------------------------------------------------------------------------
-Renaming and deleting snapshots
-Evaluating snapshots (color, thumbs up, etc)
-More information on snapshots (eg: timestamp)
-Integrate with git submodules so that we can create notebooks inside of existing git repos
-More interesting UI for interacting with all saves (eg: timeline you can scroll through)
+- Renaming and deleting snapshots
+
+- Evaluating snapshots (color, thumbs up, etc)
+
+- More information on snapshots (eg: timestamp)
+
+- Integrate with git submodules so that we can create notebooks inside of existing git repos
+
+- More interesting UI for interacting with all saves (eg: timeline you can scroll through)
+
+- Integrating GitStoreServer with jupyter so that it is started immediately.
+
+- Be able to specify the port of the GitStoreServer.
 
 Sponsor
 -------
