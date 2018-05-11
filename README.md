@@ -74,6 +74,9 @@ Future work: things that need to be done, things that others could contribute in
 
 - Be able to specify the port of the GitStoreServer.
 
+- Create snapshot should also trigger a save / create commit.
+
+
 Sponsor
 -------
 This project is sponsored by Professor Alva Couch.
